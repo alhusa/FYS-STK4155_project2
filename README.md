@@ -19,11 +19,11 @@ The parameters that can be adjusted can be found bellow the functions. You can a
 - Lambda values
 
 ### Part d/e
-The parameters tha can be adjusted in the MLP can be in initializaion of the MLP class. You can adjust:
+The parameters that can be adjusted in the MLP can be in initializaion of the MLP class. You can adjust:
 - Verbose (to print results during training or not)
 - To run the keras network or not
 - Learning rate
 - Momentum
 - Number of hidden nodes
 - Minibatch size
-- Number of epochs between checking earlystopping
+- Number of epochs between checking early stopping
