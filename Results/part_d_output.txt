@@ -1,0 +1,124 @@
+Parameters:
+Learning rate: 0.01
+Momentum: 0.5
+Minibatch: 50
+Hidden nodes: 20
+
+A 10-fold run with validation and test sets
+------------------
+
+Created MLP:
+Test set MSE: 8.0648 R2: 0.7728
+Train set MSE: 0.1974 R2: 0.9952
+
+keras MLP:
+Test set MSE: 14.2811 R2: 0.5977
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP:
+Test set MSE: 6.4165 R2: 0.8278
+Train set MSE: 0.1523 R2: 0.9964
+
+keras MLP:
+Test set MSE: 9.4469 R2: 0.7465
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP:
+Test set MSE: 8.1513 R2: 0.8215
+Train set MSE: 0.2568 R2: 0.9936
+
+keras MLP:
+Test set MSE: 15.5849 R2: 0.6587
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP:
+Test set MSE: 6.7407 R2: 0.8040
+Train set MSE: 0.0977 R2: 0.9976
+
+keras MLP:
+Test set MSE: 11.9519 R2: 0.6526
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP:
+Test set MSE: 5.1677 R2: 0.8844
+Train set MSE: 0.1993 R2: 0.9950
+
+keras MLP:
+Test set MSE: 13.1940 R2: 0.7049
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP:
+Test set MSE: 6.8348 R2: 0.8486
+Train set MSE: 0.0949 R2: 0.9977
+
+keras MLP:
+Test set MSE: 14.2760 R2: 0.6837
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP:
+Test set MSE: 6.9144 R2: 0.8347
+Train set MSE: 0.2016 R2: 0.9952
+
+keras MLP:
+Test set MSE: 14.2232 R2: 0.6600
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP:
+Test set MSE: 6.6666 R2: 0.8284
+Train set MSE: 0.2044 R2: 0.9952
+
+keras MLP:
+Test set MSE: 13.6582 R2: 0.6484
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP:
+Test set MSE: 5.1281 R2: 0.8677
+Train set MSE: 0.3200 R2: 0.9924
+
+keras MLP:
+Test set MSE: 10.7161 R2: 0.7235
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP:
+Test set MSE: 7.4454 R2: 0.8384
+Train set MSE: 0.1679 R2: 0.9959
+
+keras MLP:
+Test set MSE: 10.6968 R2: 0.7679
+Train set MSE: 0.0000 R2: 1.0000
+
+------------------
+
+Created MLP
+Test data:
+Average MSE 6.75. Min MSE: 5.13. Max MSE: 8.15. MSE std: 0.97
+Average R2 0.83. Min R2: 0.77. Max R2: 0.88. R2 std: 0.03
+Train data:
+Average MSE 0.19. Min MSE: 0.09. Max MSE: 0.32. MSE std: 0.06
+Average R2 1.00. Min R2: 0.99. Max R2: 1.00. R2 std: 0.00
+
+keras MLP
+Test data:
+Average MSE 12.80. Min MSE: 9.45. Max MSE: 15.58. MSE std: 1.89
+Average R2 0.68. Min R2: 0.60. Max R2: 0.77. R2 std: 0.05
+Train data:
+Average MSE 0.00. Min MSE: 0.00. Max MSE: 0.00. MSE std: 0.00
+Average R2 1.00. Min R2: 1.00. Max R2: 1.00. R2 std: 0.00

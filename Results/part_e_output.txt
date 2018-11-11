@@ -1,0 +1,90 @@
+Parameters:
+Learning rate: 0.1
+Momentum: 0.7
+Minibatch: 20
+Hidden nodes: 12
+
+A 10-fold run with validation and test sets
+
+--------------------------------------------------------
+
+Own MLP:
+Test set accuracy: 99.8462% Critical set accuracy: 96.0600%
+
+keras MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 91.5167%
+
+--------------------------------------------------------
+Own MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 95.9833%
+
+keras MLP:
+Test set accuracy: 99.8462% Critical set accuracy: 91.9267%
+
+--------------------------------------------------------
+Own MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 96.0833%
+
+keras MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 91.7433%
+
+--------------------------------------------------------
+Own MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 96.1900%
+
+keras MLP:
+Test set accuracy: 99.8462% Critical set accuracy: 90.6867%
+
+--------------------------------------------------------
+Own MLP:
+Test set accuracy: 100.0000% Critical set accuracy: 96.0600%
+
+keras MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 91.4000%
+
+--------------------------------------------------------
+Own MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 95.9267%
+
+keras MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 91.1533%
+
+--------------------------------------------------------
+Own MLP:
+Test set accuracy: 100.0000% Critical set accuracy: 96.1467%
+
+keras MLP:
+Test set accuracy: 99.8462% Critical set accuracy: 91.0133%
+
+--------------------------------------------------------
+Own MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 96.0467%
+
+keras MLP:
+Test set accuracy: 100.0000% Critical set accuracy: 91.3367%
+
+--------------------------------------------------------
+Own MLP:
+Test set accuracy: 99.7692% Critical set accuracy: 95.8033%
+
+keras MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 90.7067%
+
+--------------------------------------------------------
+Own MLP:
+Test set accuracy: 100.0000% Critical set accuracy: 95.9800%
+
+keras MLP:
+Test set accuracy: 99.9231% Critical set accuracy: 91.4200%
+
+--------------------------------------------------------
+
+Min, max and averages for all the runs
+
+Created MLP:
+Average test percentage 99.92%. Min test: 99.77%. Max test: 100.00%. Test std: 0.07%
+Average test percentage on critical data 96.03%. Min test: 95.80%. Max test: 96.19%. Test std: 0.11%
+
+keras MLP:
+Average test percentage 99.91%. Min test: 99.85%. Max test: 100.00%. Test std: 0.05%
+Average test percentage on critical data 91.29%. Min test: 90.69%. Max test: 91.93%. Test std: 0.39%

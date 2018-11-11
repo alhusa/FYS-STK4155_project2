@@ -1,0 +1,225 @@
+-------------------------------------------------
+OLS method
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 16.570   R2 = 0.544
+Bias average    : 36.401844. 95 conf. interval: [36.372665,36.535375]
+Variance average: 21.434218. 95 conf. interval: [19.127415,23.726505]
+
+Ridge method with lambda=0.0001
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 16.570   R2 = 0.544
+Bias average    : 36.401844. 95 conf. interval: [36.372665,36.535374]
+Variance average: 21.434213. 95 conf. interval: [19.127411,23.726500]
+
+Lasso method with lambda=0.0001
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 23.353   R2 = 0.358
+Bias average    : 36.460643. 95 conf. interval: [36.372722,36.790066]
+Variance average: 30.129485. 95 conf. interval: [26.131080,33.526849]
+-------------------------------------------------
+
+OLS method
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 17.231   R2 = 0.542
+Bias average    : 37.704131. 95 conf. interval: [37.652709,38.000239]
+Variance average: 20.171686. 95 conf. interval: [17.713359,22.599630]
+
+Ridge method with lambda=0.0010
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 17.231   R2 = 0.542
+Bias average    : 37.704131. 95 conf. interval: [37.652709,38.000238]
+Variance average: 20.171636. 95 conf. interval: [17.713321,22.599571]
+
+Lasso method with lambda=0.0010
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 0.000   R2 = 1.000
+Bias average    : 37.652622. 95 conf. interval: [37.652622,37.652623]
+Variance average: 37.559866. 95 conf. interval: [37.550047,37.568205]
+-------------------------------------------------
+
+OLS method
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 16.072   R2 = 0.540
+Bias average    : 34.987259. 95 conf. interval: [34.951835,35.113332]
+Variance average: 20.741806. 95 conf. interval: [18.649030,22.942365]
+
+Ridge method with lambda=0.0100
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 16.072   R2 = 0.540
+Bias average    : 34.987258. 95 conf. interval: [34.951835,35.113330]
+Variance average: 20.741328. 95 conf. interval: [18.648570,22.941842]
+
+Lasso method with lambda=0.0100
+Training data:
+MSE = 0.005   R2 = 1.000
+Test data:
+MSE = 0.005   R2 = 1.000
+Bias average    : 34.951835. 95 conf. interval: [34.951822,34.951875]
+Variance average: 34.152162. 95 conf. interval: [34.057843,34.233757]
+-------------------------------------------------
+
+OLS method
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 19.496   R2 = 0.515
+Bias average    : 40.278146. 95 conf. interval: [40.236662,40.417197]
+Variance average: 19.665504. 95 conf. interval: [17.245334,22.478716]
+
+Ridge method with lambda=0.1000
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 19.496   R2 = 0.515
+Bias average    : 40.278136. 95 conf. interval: [40.236661,40.417147]
+Variance average: 19.660821. 95 conf. interval: [17.241453,22.473151]
+
+Lasso method with lambda=0.1000
+Training data:
+MSE = 0.490   R2 = 0.986
+Test data:
+MSE = 0.703   R2 = 0.983
+Bias average    : 40.237955. 95 conf. interval: [40.236627,40.242514]
+Variance average: 30.796450. 95 conf. interval: [29.874054,31.710251]
+-------------------------------------------------
+
+OLS method
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 16.920   R2 = 0.519
+Bias average    : 35.246680. 95 conf. interval: [35.182265,35.462207]
+Variance average: 21.023378. 95 conf. interval: [18.300341,23.439976]
+
+Ridge method with lambda=1.0000
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 16.917   R2 = 0.519
+Bias average    : 35.246622. 95 conf. interval: [35.182264,35.462439]
+Variance average: 20.975734. 95 conf. interval: [18.261557,23.379556]
+
+Lasso method with lambda=1.0000
+Training data:
+MSE = 30.964   R2 = 0.193
+Test data:
+MSE = 30.917   R2 = 0.121
+Bias average    : 35.237511. 95 conf. interval: [35.182326,35.394631]
+Variance average: 0.988957. 95 conf. interval: [0.394591,1.949996]
+-------------------------------------------------
+
+OLS method
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 17.518   R2 = 0.555
+Bias average    : 39.421603. 95 conf. interval: [39.348687,39.635045]
+Variance average: 21.685915. 95 conf. interval: [19.246024,24.103707]
+
+Ridge method with lambda=10.0000
+Training data:
+MSE = 0.002   R2 = 1.000
+Test data:
+MSE = 17.526   R2 = 0.555
+Bias average    : 39.419161. 95 conf. interval: [39.348679,39.620527]
+Variance average: 21.169969. 95 conf. interval: [18.819584,23.478402]
+
+Lasso method with lambda=10.0000
+Training data:
+MSE = 36.831   R2 = 0.000
+Test data:
+MSE = 39.389   R2 = -0.001
+Bias average    : 39.389043. 95 conf. interval: [39.348842,39.550827]
+Variance average: 0.000000. 95 conf. interval: [0.000000,0.000000]
+-------------------------------------------------
+
+OLS method
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 17.592   R2 = 0.568
+Bias average    : 40.787548. 95 conf. interval: [40.745976,40.951525]
+Variance average: 22.790202. 95 conf. interval: [19.468601,26.091181]
+
+Ridge method with lambda=100.0000
+Training data:
+MSE = 0.126   R2 = 0.996
+Test data:
+MSE = 17.917   R2 = 0.560
+Bias average    : 40.784299. 95 conf. interval: [40.745984,40.920904]
+Variance average: 18.758652. 95 conf. interval: [16.123873,21.128839]
+
+Lasso method with lambda=100.0000
+Training data:
+MSE = 35.785   R2 = 0.000
+Test data:
+MSE = 40.828   R2 = -0.002
+Bias average    : 40.827593. 95 conf. interval: [40.746046,41.186796]
+Variance average: 0.000000. 95 conf. interval: [0.000000,0.000000]
+-------------------------------------------------
+
+OLS method
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 18.262   R2 = 0.533
+Bias average    : 39.176698. 95 conf. interval: [39.135912,39.332510]
+Variance average: 21.062740. 95 conf. interval: [18.945483,24.368292]
+
+Ridge method with lambda=1000.0000
+Training data:
+MSE = 3.004   R2 = 0.918
+Test data:
+MSE = 22.725   R2 = 0.419
+Bias average    : 39.171391. 95 conf. interval: [39.135913,39.318685]
+Variance average: 8.275022. 95 conf. interval: [7.408568,9.370709]
+
+Lasso method with lambda=1000.0000
+Training data:
+MSE = 36.606   R2 = 0.000
+Test data:
+MSE = 39.260   R2 = -0.003
+Bias average    : 39.259980. 95 conf. interval: [39.136088,39.600816]
+Variance average: 0.000000. 95 conf. interval: [0.000000,0.000000]
+-------------------------------------------------
+
+OLS method
+Training data:
+MSE = 0.000   R2 = 1.000
+Test data:
+MSE = 15.176   R2 = 0.550
+Bias average    : 33.771699. 95 conf. interval: [33.693779,34.017190]
+Variance average: 21.778384. 95 conf. interval: [19.834058,24.607834]
+
+Ridge method with lambda=10000.0000
+Training data:
+MSE = 20.602   R2 = 0.476
+Test data:
+MSE = 27.682   R2 = 0.178
+Bias average    : 33.830508. 95 conf. interval: [33.700484,34.043913]
+Variance average: 1.074695. 95 conf. interval: [0.873521,1.236295]
+
+Lasso method with lambda=10000.0000
+Training data:
+MSE = 39.351   R2 = 0.000
+Test data:
+MSE = 33.901   R2 = -0.006
+Bias average    : 33.901489. 95 conf. interval: [33.693827,34.331154]
+Variance average: 0.000000. 95 conf. interval: [0.000000,0.000000]
+-------------------------------------------------
