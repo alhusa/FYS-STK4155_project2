@@ -1,0 +1,2 @@
+#Ignoring the files with Ising model data
+*.pkl
