@@ -1,4 +1,4 @@
-#FYS-STK4155_project2
+# FYS-STK4155_project2
 
 ##Running the programs
 All the programs can be run as normal in the command line. Some of the programs have parameters that can be adjusted as decribed bellow.
