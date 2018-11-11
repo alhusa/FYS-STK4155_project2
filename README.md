@@ -5,7 +5,7 @@ All the programs can be run as normal in the command line. Some of the programs 
 
 ### Part b
 The parameters that can be adjusted can be found bellow the functions. You can adjust:
--Number of samples
+- Number of samples
 -Lambda values
 -Percentage of data to be used for training
 -Number of times to run the bootrun
