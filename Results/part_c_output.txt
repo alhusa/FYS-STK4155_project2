@@ -9,7 +9,7 @@ Train score: 0.6956
 Test score: 0.6888
 Critical score: 0.5376
 
-Scikit learn method:
+Scikit learn method lambda = 0.00001:
 Train score: 0.7286
 Test score: 0.6908
 Critical score: 0.6197
@@ -26,7 +26,7 @@ Train score: 0.7039
 Test score: 0.7004
 Critical score: 0.5504
 
-Scikit learn method:
+Scikit learn method lambda = 0.0001:
 Train score: 0.7286
 Test score: 0.6909
 Critical score: 0.6197
@@ -43,7 +43,7 @@ Train score: 0.7022
 Test score: 0.6935
 Critical score: 0.5456
 
-Scikit learn method:
+Scikit learn method lambda = 0.0100:
 Train score: 0.7286
 Test score: 0.6908
 Critical score: 0.6197
@@ -60,7 +60,7 @@ Train score: 0.7174
 Test score: 0.7043
 Critical score: 0.5897
 
-Scikit learn method:
+Scikit learn method lambda = 1.0000:
 Train score: 0.7286
 Test score: 0.6909
 Critical score: 0.6197
@@ -77,7 +77,7 @@ Train score: 0.4907
 Test score: 0.4923
 Critical score: 0.5083
 
-Scikit learn method:
+Scikit learn method lambda = 100.0000:
 Train score: 0.7280
 Test score: 0.6905
 Critical score: 0.6212
@@ -94,7 +94,7 @@ Train score: 0.5047
 Test score: 0.5017
 Critical score: 0.4992
 
-Scikit learn method:
+Scikit learn method lambda = 10000.0000:
 Train score: 0.6828
 Test score: 0.6541
 Critical score: 0.6737
@@ -111,7 +111,7 @@ Train score: 0.5098
 Test score: 0.5076
 Critical score: 0.5062
 
-Scikit learn method:
+Scikit learn method lambda = 100000.0000:
 Train score: 0.6294
 Test score: 0.6114
 Critical score: 0.6925
