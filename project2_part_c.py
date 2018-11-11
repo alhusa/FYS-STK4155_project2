@@ -199,7 +199,7 @@ for l in lamb:
     print("Test score: %.4f" %test_ac_l2[count])
     print("Critical score: %.4f\n" %citical_ac_l2[count])
 
-    print("Scikit learn method:")
+    print("Scikit learn method lambda = %.5f:" %l)
     print("Train score: %.4f" %train_ac_sci[count])
     print("Test score: %.4f" %test_ac_sci[count])
     print("Critical score: %.4f\n" %citical_ac_sci[count])
