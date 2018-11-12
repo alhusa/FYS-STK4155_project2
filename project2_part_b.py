@@ -73,33 +73,38 @@ def MSER2 (z,zpred,n):
 #function to calculate Bias, variance and error terms of MSE
 def VBE(zpred,z):
     """
-    Calculates the bias, variance and error.
+    Calculates the bias and variance.
     Inputs: Correct data and predicted data.
-    Outputs: bias, variance and error.
+    Outputs: bias and variance.
     """
     #gets the mean for the prediced values of z
-    zpm = np.mean(zpred)
+    zpm = np.mean(zpred, axis=1, keepdims=True)
 
-    zv = 0
+    #values to store sums
+    zv = np.zeros(len(z))
     zb = 0
-    zer = 0
-    if len(z) == len(zpred):
-        n = len(z)
+    n = len(z)
 
     for i in range(0,n):
-        zv = zv + (zpred[i] - zpm)**2
-        zb = zb + (z[i] - zpm)**2
-        zer = zer + (z[i] - zpm)*(zpm - zpred[i])
+        zb += (z[i] - zpm[i])**2
+
+    for i in range(0,zpred.shape[1]):
+            zv += zpred[:,i]**2
 
     #variance calculation
-    varz = zv / n
+    varz = np.mean((zv / zpred.shape[1]) - zpm**2)
+
     #bias calculation
-    biasz = zb / n
-    #error calculation
-    zeps = (2*zer) / n
+    biasz = (zb / n)
 
 
-    return varz, biasz, zeps
+    # #used to compare methods
+    # bias = np.mean( (z.reshape(len(z),1) - np.mean(zpred, axis=1, keepdims=True))**2 )
+    # variance = np.mean( np.var(zpred, axis=1, keepdims=True) )
+    # print(bias,variance)
+    # print(biasz,varz)
+
+    return varz, biasz
 
 def ising_energies(states,L):
     """
@@ -154,6 +159,22 @@ test_r2_ridge = np.zeros(len(lamb))
 train_r2_lasso = np.zeros(len(lamb))
 test_r2_lasso = np.zeros(len(lamb))
 
+#array to store the mse scores
+train_mse_ols = np.zeros(len(lamb))
+test_mse_ols = np.zeros(len(lamb))
+train_mse_ridge = np.zeros(len(lamb))
+test_mse_ridge = np.zeros(len(lamb))
+train_mse_lasso = np.zeros(len(lamb))
+test_mse_lasso = np.zeros(len(lamb))
+
+#array to store bias and variance
+bias_ols = np.zeros(len(lamb))
+var_ols = np.zeros(len(lamb))
+bias_ridge = np.zeros(len(lamb))
+var_ridge = np.zeros(len(lamb))
+bias_lasso = np.zeros(len(lamb))
+var_lasso = np.zeros(len(lamb))
+
 for l in lamb:
 
     #creates array to store data
@@ -163,31 +184,35 @@ for l in lamb:
     zMSEte = np.zeros((3,bootrun))
     zRte = np.zeros((3,bootrun))
     timeend = np.zeros(bootrun)
-    varz = np.zeros((3,bootrun))
-    biasz = np.zeros((3,bootrun))
+    varz = np.zeros(3)
+    biasz = np.zeros(3)
 
     #creates array to store the best beta coefficients
     beta = np.zeros((3,bootrun,L*L))
 
+    #get random indices for test data
+    randi = random.sample(range(0,sampn),testn)
+
+    #array to store test data
+    xte = np.zeros((testn,L*L))
+    zte = np.zeros(testn)
+
+    #get the test data from the full set
+    for k in range(0,testn):
+        xte[k] = states[randi[k],:]
+        zte[k] = z[randi[k]]
+
+    #remove the test data from the sample som they are not
+    #used for training
+    xtr = np.delete(states,randi,axis=0)
+    ztr = np.delete(z,randi)
+
+    #create array to store the test results
+    zpredtest_o_sum = np.zeros((testn,bootrun))
+    zpredtest_r_sum = np.zeros((testn,bootrun))
+    zpredtest_l_sum = np.zeros((testn,bootrun))
+
     for j in range(0,bootrun):
-
-        #get random indices for test data
-        randi = random.sample(range(0,sampn),testn)
-
-        #array to store test data
-        xte = np.zeros((testn,L*L))
-        zte = np.zeros(testn)
-
-        #get the test data from the full set
-        for k in range(0,testn):
-            xte[k] = states[randi[k],:]
-            zte[k] = z[randi[k]]
-
-        #remove the test data from the sample som they are not
-        #used for training
-        xtr = np.delete(states,randi,axis=0)
-        ztr = np.delete(z,randi)
-
 
         #set start time for the run
         timestart = tm.time()
@@ -225,38 +250,22 @@ for l in lamb:
         zMSEte[0][j], zRte[0][j] = MSER2(zte,zpredtest_o,len(zte))
         zMSEte[1][j], zRte[1][j] = MSER2(zte,zpredtest_r,len(zte))
         zMSEte[2][j], zRte[2][j] = MSER2(zte,zpredtest_l,len(zte))
-        #function to calualte variance bias and error term
-        varz[0][j], biasz[0][j], zeps[0][j] = VBE(zpredtest_o,zte)
-        varz[1][j], biasz[1][j], zeps[1][j] = VBE(zpredtest_r,zte)
-        varz[2][j], biasz[2][j], zeps[2][j] = VBE(zpredtest_l,zte)
 
+        #sum the test results
+        zpredtest_o_sum[:,j] = zpredtest_o
+        zpredtest_r_sum[:,j] = zpredtest_r
+        zpredtest_l_sum[:,j] = zpredtest_l
 
         #gets the times used to make and use model
         timeend[j] = tm.time() - timestart
 
 
-    #emperical confidence intervals for the bias and variance
-    #calculates the lower and upper percentile based on alpha
-    alpha = 0.95
-    pu = ((1.0-alpha)/2.0) * 100
-    pl = (alpha+((1-alpha)/2)) * 100
 
-    biaszl = np.zeros((3,1))
-    biaszu = np.zeros((3,1))
-    varzl = np.zeros((3,1))
-    varzu = np.zeros((3,1))
+    #function to calualte variance bias and error term
+    varz[0], biasz[0] = VBE(zpredtest_o_sum,zte)
+    varz[1], biasz[1] = VBE(zpredtest_r_sum,zte)
+    varz[2], biasz[2] = VBE(zpredtest_l_sum,zte)
 
-    #sort the array and get the upper an lower
-    #limits for the confidence intervals for
-    #the bias and variance
-    for i in range(0,3):
-        biasz_temp = np.sort(biasz[i,:])
-        biaszl[i] = np.percentile(biasz_temp, pu)
-        biaszu[i] = np.percentile(biasz_temp, pl)
-
-        varz_temp = np.sort(varz[i,:])
-        varzl[i] = np.percentile(varz_temp, pu)
-        varzu[i] = np.percentile(varz_temp, pl)
 
     #prints releevant data
     print("OLS method")
@@ -264,32 +273,50 @@ for l in lamb:
     print("MSE = %.3f   R2 = %.3f" %(np.mean(zMSE[0,:],) , np.mean(zR[0,:])))
     print("Test data:")
     print("MSE = %.3f   R2 = %.3f" %(np.mean(zMSEte[0,:]) , np.mean(zRte[0,:])))
-    print("Bias average    : %f. 95 conf. interval: [%f,%f]" %(np.mean(biasz[0]), biaszl[0],biaszu[0]))
-    print("Variance average: %f. 95 conf. interval: [%f,%f]\n" %(np.mean(varz[0]), varzl[0],varzu[0]))
+    print("Bias     : %.4f" %(np.mean(biasz[0])))
+    print("Variance : %.4f\n" %(np.mean(varz[0])))
+
 
     print("Ridge method with lambda=%.4f" %l)
     print("Training data:")
     print("MSE = %.3f   R2 = %.3f" %(np.mean(zMSE[1,:],) , np.mean(zR[1,:])))
     print("Test data:")
     print("MSE = %.3f   R2 = %.3f" %(np.mean(zMSEte[1,:]) , np.mean(zRte[1,:])))
-    print("Bias average    : %f. 95 conf. interval: [%f,%f]" %(np.mean(biasz[1]), biaszl[1],biaszu[1]))
-    print("Variance average: %f. 95 conf. interval: [%f,%f]\n" %(np.mean(varz[1]), varzl[1],varzu[1]))
+    print("Bias     : %.4f" %(np.mean(biasz[1])))
+    print("Variance : %.4f\n" %(np.mean(varz[1])))
 
     print("Lasso method with lambda=%.4f" %l)
     print("Training data:")
     print("MSE = %.3f   R2 = %.3f" %(np.mean(zMSE[2,:],) , np.mean(zR[2,:])))
     print("Test data:")
     print("MSE = %.3f   R2 = %.3f" %(np.mean(zMSEte[2,:]) , np.mean(zRte[2,:])))
-    print("Bias average    : %f. 95 conf. interval: [%f,%f]" %(np.mean(biasz[2]), biaszl[2],biaszu[2]))
-    print("Variance average: %f. 95 conf. interval: [%f,%f]" %(np.mean(varz[2]), varzl[2],varzu[2]))
+    print("Bias     : %.4f" %(np.mean(biasz[2])))
+    print("Variance : %.4f\n" %(np.mean(varz[2])))
 
     print("-------------------------------------------------")
+
+    #store data for plotting
     train_r2_ols[count] = np.mean(zR[0,:])
     test_r2_ols[count] = np.mean(zRte[0,:])
     train_r2_ridge[count] = np.mean(zR[1,:])
     test_r2_ridge[count] = np.mean(zRte[1,:])
     train_r2_lasso[count]= np.mean(zR[2,:])
     test_r2_lasso[count] = np.mean(zRte[2,:])
+
+    train_mse_ols[count] = np.mean(zMSE[0,:])
+    test_mse_ols[count] = np.mean(zMSEte[0,:])
+    train_mse_ridge[count] = np.mean(zMSE[1,:])
+    test_mse_ridge[count] = np.mean(zMSEte[1,:])
+    train_mse_lasso[count]= np.mean(zMSE[2,:])
+    test_mse_lasso[count] = np.mean(zMSEte[2,:])
+
+    bias_ols[count] = np.mean(biasz[0])
+    var_ols[count] = np.mean(varz[0])
+    bias_ridge[count] = np.mean(biasz[1])
+    var_ridge[count] = np.mean(varz[1])
+    bias_lasso[count] = np.mean(biasz[2])
+    var_lasso[count] = np.mean(varz[2])
+
 
     #method for plotting gotten from stack exchange. Vissited: 02-11-18
     #url: https://stackoverflow.com/questions/13784201/matplotlib-2-subplots-1-colorbar
@@ -330,7 +357,7 @@ plt.semilogx(lamb, test_r2_ridge,'--r',label='Ridge test',linewidth=1)
 plt.semilogx(lamb, train_r2_lasso, 'g',label='Lasso train')
 plt.semilogx(lamb, test_r2_lasso, '--g',label='Lasso test')
 
-fig = plt.gcf()
+
 #fig.set_size_inches(10.0, 6.0)
 plt.title("R2-scores for test and training data with different values for lambda", fontsize = 16)
 plt.legend(loc='lower left',fontsize=16)
@@ -339,6 +366,45 @@ plt.xlim([min(lamb), max(lamb)])
 plt.xlabel('Lambda',fontsize=15)
 plt.ylabel('R2 - score',fontsize=15)
 plt.tick_params(labelsize=15)
+
+plt.figure(count + 2)
+# Plot our performance on both the training and test data
+plt.semilogx(lamb, train_mse_ols, 'b',label='OLS train')
+plt.semilogx(lamb, test_mse_ols,'--b',label='OLS test')
+plt.semilogx(lamb, train_mse_ridge,'r',label='Ridge train',linewidth=1)
+plt.semilogx(lamb, test_mse_ridge,'--r',label='Ridge test',linewidth=1)
+plt.semilogx(lamb, train_mse_lasso, 'g',label='Lasso train')
+plt.semilogx(lamb, test_mse_lasso, '--g',label='Lasso test')
+
+
+#fig.set_size_inches(10.0, 6.0)
+plt.title("MSE-scores for test and training data with different values for lambda", fontsize = 16)
+plt.legend()
+#plt.ylim([-0.01, 1.01])
+plt.xlim([min(lamb), max(lamb)])
+plt.xlabel('Lambda',fontsize=15)
+plt.ylabel('MSE - score',fontsize=15)
+plt.tick_params(labelsize=15)
+
+plt.figure(count + 3)
+# Plot our performance on both the training and test data
+plt.semilogx(lamb, bias_ols, 'b',label='OLS bias')
+plt.semilogx(lamb, var_ols,'--b',label='OLS var')
+plt.semilogx(lamb, bias_ridge,'r',label='Ridge bias',linewidth=1)
+plt.semilogx(lamb, var_ridge,'--r',label='Ridge var',linewidth=1)
+plt.semilogx(lamb, bias_lasso, 'g',label='Lasso bias')
+plt.semilogx(lamb, var_lasso, '--g',label='Lasso var')
+
+
+#fig.set_size_inches(10.0, 6.0)
+plt.title("Bias and variance for test data with different values for lambda", fontsize = 16)
+plt.legend()
+#plt.ylim([-0.01, 1.01])
+plt.xlim([min(lamb), max(lamb)])
+plt.xlabel('Lambda',fontsize=15)
+plt.ylabel('bias/var - score',fontsize=15)
+plt.tick_params(labelsize=15)
+
 
 
 plt.show()

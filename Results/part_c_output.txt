@@ -1,119 +1,152 @@
-
 Created minibatch method:
-Train score: 0.6944
-Test score: 0.6890
-Critical score: 0.5370
+Train score: 69.8292
+Test score: 69.2492
+Critical score: 53.4233
 
 Created minibatch with L2 regularization lambda = 0.00001:
-Train score: 0.6956
-Test score: 0.6888
-Critical score: 0.5376
+Train score: 70.1662
+Test score: 69.6138
+Critical score: 54.4333
 
 Scikit learn method lambda = 0.00001:
-Train score: 0.7286
-Test score: 0.6908
-Critical score: 0.6197
+Train score: 72.9723
+Test score: 69.4985
+Critical score: 61.6667
 
 --------------
 
 Created minibatch method:
-Train score: 0.6986
-Test score: 0.6934
-Critical score: 0.5414
+Train score: 70.4815
+Test score: 69.6415
+Critical score: 55.1133
 
-Created minibatch with L2 regularization lambda = 0.0001:
-Train score: 0.7039
-Test score: 0.7004
-Critical score: 0.5504
+Created minibatch with L2 regularization lambda = 0.00010:
+Train score: 70.3800
+Test score: 69.6600
+Critical score: 55.2867
 
-Scikit learn method lambda = 0.0001:
-Train score: 0.7286
-Test score: 0.6909
-Critical score: 0.6197
-
---------------
-
-Created minibatch method:
-Train score: 0.7014
-Test score: 0.6960
-Critical score: 0.5505
-
-Created minibatch with L2 regularization lambda = 0.0100:
-Train score: 0.7022
-Test score: 0.6935
-Critical score: 0.5456
-
-Scikit learn method lambda = 0.0100:
-Train score: 0.7286
-Test score: 0.6908
-Critical score: 0.6197
+Scikit learn method lambda = 0.00010:
+Train score: 72.9708
+Test score: 69.5000
+Critical score: 61.6667
 
 --------------
 
 Created minibatch method:
-Train score: 0.7051
-Test score: 0.6990
-Critical score: 0.5495
+Train score: 69.1369
+Test score: 68.5369
+Critical score: 53.3000
 
-Created minibatch with L2 regularization lambda = 1.0000:
-Train score: 0.7174
-Test score: 0.7043
-Critical score: 0.5897
+Created minibatch with L2 regularization lambda = 0.00100:
+Train score: 70.3508
+Test score: 69.8200
+Critical score: 55.2600
 
-Scikit learn method lambda = 1.0000:
-Train score: 0.7286
-Test score: 0.6909
-Critical score: 0.6197
-
---------------
-
-Created minibatch method:
-Train score: 0.6878
-Test score: 0.6831
-Critical score: 0.5322
-
-Created minibatch with L2 regularization lambda = 100.0000:
-Train score: 0.4907
-Test score: 0.4923
-Critical score: 0.5083
-
-Scikit learn method lambda = 100.0000:
-Train score: 0.7280
-Test score: 0.6905
-Critical score: 0.6212
+Scikit learn method lambda = 0.00100:
+Train score: 72.9723
+Test score: 69.4985
+Critical score: 61.6667
 
 --------------
 
 Created minibatch method:
-Train score: 0.6893
-Test score: 0.6873
-Critical score: 0.5329
+Train score: 69.8862
+Test score: 69.2662
+Critical score: 54.6000
 
-Created minibatch with L2 regularization lambda = 10000.0000:
-Train score: 0.5047
-Test score: 0.5017
-Critical score: 0.4992
+Created minibatch with L2 regularization lambda = 0.01000:
+Train score: 70.2031
+Test score: 69.6600
+Critical score: 54.9767
 
-Scikit learn method lambda = 10000.0000:
-Train score: 0.6828
-Test score: 0.6541
-Critical score: 0.6737
+Scikit learn method lambda = 0.01000:
+Train score: 72.9723
+Test score: 69.4985
+Critical score: 61.6667
 
 --------------
 
 Created minibatch method:
-Train score: 0.7027
-Test score: 0.6968
-Critical score: 0.5480
+Train score: 69.4831
+Test score: 68.7769
+Critical score: 53.9500
 
-Created minibatch with L2 regularization lambda = 100000.0000:
-Train score: 0.5098
-Test score: 0.5076
-Critical score: 0.5062
+Created minibatch with L2 regularization lambda = 1.00000:
+Train score: 71.9262
+Test score: 70.4785
+Critical score: 58.2133
 
-Scikit learn method lambda = 100000.0000:
-Train score: 0.6294
-Test score: 0.6114
-Critical score: 0.6925
+Scikit learn method lambda = 1.00000:
+Train score: 72.9708
+Test score: 69.4985
+Critical score: 61.6667
+
+--------------
+
+Created minibatch method:
+Train score: 68.8092
+Test score: 68.5262
+Critical score: 53.1267
+
+Created minibatch with L2 regularization lambda = 10.00000:
+Train score: 70.7338
+Test score: 67.9600
+Critical score: 64.9567
+
+Scikit learn method lambda = 10.00000:
+Train score: 72.9615
+Test score: 69.4969
+Critical score: 61.6667
+
+--------------
+
+Created minibatch method:
+Train score: 69.2523
+Test score: 68.5569
+Critical score: 53.0900
+
+Created minibatch with L2 regularization lambda = 100.00000:
+Train score: 49.7800
+Test score: 49.9415
+Critical score: 50.6567
+
+Scikit learn method lambda = 100.00000:
+Train score: 72.9231
+Test score: 69.4431
+Critical score: 61.7267
+
+--------------
+
+Created minibatch method:
+Train score: 70.1615
+Test score: 69.5015
+Critical score: 54.0267
+
+Created minibatch with L2 regularization lambda = 10000.00000:
+Train score: 50.2108
+Test score: 50.1200
+Critical score: 49.7867
+
+Scikit learn method lambda = 10000.00000:
+Train score: 69.1215
+Test score: 66.0400
+Critical score: 66.7700
+
+--------------
+
+Created minibatch method:
+Train score: 69.2708
+Test score: 68.9769
+Critical score: 53.7267
+
+Created minibatch with L2 regularization lambda = 100000.00000:
+Train score: 50.7785
+Test score: 50.9046
+Critical score: 49.2667
+
+Scikit learn method lambda = 100000.00000:
+Train score: 64.4138
+Test score: 62.3246
+Critical score: 69.1233
 
 --------------

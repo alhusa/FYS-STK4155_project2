@@ -17,7 +17,7 @@ class mlp:
         function to initialize the network
         """
         #set if the network prints the progress
-        self.verbose = True
+        self.verbose = False
         #toggle the keras nettwork
         self.run_keras = True
         #learning rate
@@ -399,12 +399,12 @@ if mlp1.run_keras:
 
 
 if mlp1.run_keras:
-    plt.title("Accuracy scores for test, training and citical data for the created and the keras MLP during a 10-fold", fontsize = 16)
+    plt.title("Accuracy scores for test, training and critical data for the created and the keras MLP during a 10-fold", fontsize = 16)
 else:
-    plt.title("Accuracy scores for test, training and citical data for the created MLP during a 10-fold", fontsize = 16)
+    plt.title("Accuracy scores for test, training and critical data for the created MLP during a 10-fold", fontsize = 16)
 plt.legend(fontsize=16)
 plt.xlabel('Fold number',fontsize=15)
-plt.ylabel('Accuracy score',fontsize=15)
+plt.ylabel('Accuracy score [%]',fontsize=15)
 plt.tick_params(labelsize=15)
 
 

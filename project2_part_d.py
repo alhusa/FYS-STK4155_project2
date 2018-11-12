@@ -265,6 +265,7 @@ r2_keras_test = np.zeros(10)
 mse_keras_train = np.zeros(10)
 r2_keras_train = np.zeros(10)
 
+
 for i in range(0,10):
 
     # Test data is used to evaluate how good the completely trained network is.
@@ -322,7 +323,7 @@ for i in range(0,10):
         model.fit(train, train_targets, epochs=1000, verbose=0, batch_size=mlp1.minibatch, validation_data=(valid,valid_targets), callbacks=[earlystop])
         keras_pred_test = model.predict(test)
         keras_pred_train = model.predict(train)
-        
+
         mse_keras_test[i] = met.mean_squared_error(test_targets,keras_pred_test)
         r2_keras_test[i] = met.r2_score(test_targets,keras_pred_test)
         mse_keras_train[i] = met.mean_squared_error(train_targets,keras_pred_train)

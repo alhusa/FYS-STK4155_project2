@@ -47,8 +47,8 @@ def beta_update_l2(lr,x,y,beta,lamb):
 trainp = 0.5 #percentage of the data to be used for training
 minibatch = 20 #minibatch size
 lr = 0.00001 #learning rate
-lamb = [0.00001, 0.0001, 0.01, 1, 100, 10000, 100000] #value of lambda
-
+lamb = [0.00001, 0.0001,0.001, 0.01, 1, 10, 100, 10000, 100000] #value of lambda
+#lamb = [0.00001, 0.0001,0.001, 0.01, 1] #a smaller lambda
 #not adjustable
 L = 40 #the root of the number of spins
 
@@ -172,18 +172,18 @@ for l in lamb:
 
 
     #calualte the score of the predicted labels
-    test_ac[count]= np.sum(yte.reshape((sampn - trainn,1)) == ypred) / len(yte)
-    train_ac[count]= np.sum(yt.reshape((trainn,1)) == ypred_train) / len(yt)
-    citical_ac[count] = np.sum(critical_label.reshape((len(critical_label),1)) == critical_ypred) / len(critical_label)
+    test_ac[count]= (np.sum(yte.reshape((sampn - trainn,1)) == ypred) / len(yte))*100
+    train_ac[count]= (np.sum(yt.reshape((trainn,1)) == ypred_train) / len(yt))*100
+    citical_ac[count] = (np.sum(critical_label.reshape((len(critical_label),1)) == critical_ypred) / len(critical_label))*100
 
-    test_ac_l2[count]= np.sum(yte.reshape((sampn - trainn,1)) == ypred_l2) / len(yte)
-    train_ac_l2[count] = np.sum(yt.reshape((trainn,1)) == ypred_train_l2) / len(yt)
-    citical_ac_l2[count] = np.sum(critical_label.reshape((len(critical_label),1)) == critical_ypred_l2) / len(critical_label)
+    test_ac_l2[count]= (np.sum(yte.reshape((sampn - trainn,1)) == ypred_l2) / len(yte))*100
+    train_ac_l2[count] = (np.sum(yt.reshape((trainn,1)) == ypred_train_l2) / len(yt))*100
+    citical_ac_l2[count] = (np.sum(critical_label.reshape((len(critical_label),1)) == critical_ypred_l2) / len(critical_label))*100
 
     #calualte the score of the scikit models
-    test_ac_sci[count] = scilearn.score(xte,yte)
-    train_ac_sci[count] = scilearn.score(xt,yt)
-    citical_ac_sci[count] = scilearn.score(critical_data, critical_label)
+    test_ac_sci[count] = scilearn.score(xte,yte) * 100
+    train_ac_sci[count] = scilearn.score(xt,yt) * 100
+    citical_ac_sci[count] = scilearn.score(critical_data, critical_label) * 100
 
 
 
@@ -214,18 +214,17 @@ plt.semilogx(lamb, test_ac,'--b',label='Created method test')
 plt.semilogx(lamb, citical_ac,'-.b',label='Created method critical')
 plt.semilogx(lamb, train_ac_l2,'r',label='Created L2 train',linewidth=1)
 plt.semilogx(lamb, test_ac_l2,'--r',label='Created L2 test',linewidth=1)
-plt.semilogx(lamb, citical_ac_l2,'-.r',label='L2 critical',linewidth=1)
+plt.semilogx(lamb, citical_ac_l2,'-.r',label='Created L2 critical',linewidth=1)
 plt.semilogx(lamb, train_ac_sci, 'g',label='Scikit train')
 plt.semilogx(lamb, test_ac_sci, '--g',label='Scikit test')
 plt.semilogx(lamb, citical_ac_sci, '-.g',label='Scikit critical')
 
 
-plt.title("Accuracy scores for test and training data with different values for lambda", fontsize = 16)
+plt.title("Accuracy scores for test, training and critical data with different values for lambda", fontsize = 16)
 plt.legend(loc='lower left',fontsize=16)
-plt.ylim([0.4, 0.8])
 plt.xlim([min(lamb), max(lamb)])
 plt.xlabel('Lambda',fontsize=15)
-plt.ylabel('R2 - score',fontsize=15)
+plt.ylabel('Accuracy score [%]',fontsize=15)
 plt.tick_params(labelsize=15)
 
 

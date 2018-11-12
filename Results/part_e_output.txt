@@ -5,86 +5,101 @@ Minibatch: 20
 Hidden nodes: 12
 
 A 10-fold run with validation and test sets
-
 --------------------------------------------------------
 
 Own MLP:
-Test set accuracy: 99.8462% Critical set accuracy: 96.0600%
+Train set accuracy: 100.0000% Test set accuracy: 100.0000% Critical set accuracy: 96.1200%
 
 keras MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 91.5167%
+Train set accuracy: 99.9712% Test set accuracy: 99.1538% Critical set accuracy: 82.0700%
 
 --------------------------------------------------------
+--------------------------------------------------------
+
 Own MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 95.9833%
+Train set accuracy: 100.0000% Test set accuracy: 99.8462% Critical set accuracy: 95.9733%
 
 keras MLP:
-Test set accuracy: 99.8462% Critical set accuracy: 91.9267%
+Train set accuracy: 99.9808% Test set accuracy: 99.8462% Critical set accuracy: 92.3233%
 
 --------------------------------------------------------
+--------------------------------------------------------
+
 Own MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 96.0833%
+Train set accuracy: 99.9904% Test set accuracy: 99.8462% Critical set accuracy: 95.9000%
 
 keras MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 91.7433%
+Train set accuracy: 99.9808% Test set accuracy: 99.9231% Critical set accuracy: 91.5033%
 
 --------------------------------------------------------
+--------------------------------------------------------
+
 Own MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 96.1900%
+Train set accuracy: 99.9808% Test set accuracy: 99.6154% Critical set accuracy: 95.6833%
 
 keras MLP:
-Test set accuracy: 99.8462% Critical set accuracy: 90.6867%
+Train set accuracy: 99.9904% Test set accuracy: 99.8462% Critical set accuracy: 91.5567%
 
 --------------------------------------------------------
+--------------------------------------------------------
+
 Own MLP:
-Test set accuracy: 100.0000% Critical set accuracy: 96.0600%
+Train set accuracy: 100.0000% Test set accuracy: 100.0000% Critical set accuracy: 95.9133%
 
 keras MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 91.4000%
+Train set accuracy: 99.9808% Test set accuracy: 99.7692% Critical set accuracy: 92.2567%
 
 --------------------------------------------------------
+--------------------------------------------------------
+
 Own MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 95.9267%
+Train set accuracy: 99.9904% Test set accuracy: 100.0000% Critical set accuracy: 95.8800%
 
 keras MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 91.1533%
+Train set accuracy: 99.9615% Test set accuracy: 100.0000% Critical set accuracy: 91.6733%
 
 --------------------------------------------------------
+--------------------------------------------------------
+
 Own MLP:
-Test set accuracy: 100.0000% Critical set accuracy: 96.1467%
+Train set accuracy: 100.0000% Test set accuracy: 99.9231% Critical set accuracy: 96.2500%
 
 keras MLP:
-Test set accuracy: 99.8462% Critical set accuracy: 91.0133%
+Train set accuracy: 100.0000% Test set accuracy: 99.8462% Critical set accuracy: 91.1133%
 
 --------------------------------------------------------
+--------------------------------------------------------
+
 Own MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 96.0467%
+Train set accuracy: 99.9904% Test set accuracy: 100.0000% Critical set accuracy: 95.9100%
 
 keras MLP:
-Test set accuracy: 100.0000% Critical set accuracy: 91.3367%
+Train set accuracy: 99.9808% Test set accuracy: 100.0000% Critical set accuracy: 92.0800%
 
 --------------------------------------------------------
+--------------------------------------------------------
+
 Own MLP:
-Test set accuracy: 99.7692% Critical set accuracy: 95.8033%
+Train set accuracy: 100.0000% Test set accuracy: 100.0000% Critical set accuracy: 96.1800%
 
 keras MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 90.7067%
+Train set accuracy: 99.9712% Test set accuracy: 99.9231% Critical set accuracy: 91.9367%
 
 --------------------------------------------------------
+--------------------------------------------------------
+
 Own MLP:
-Test set accuracy: 100.0000% Critical set accuracy: 95.9800%
+Train set accuracy: 100.0000% Test set accuracy: 99.8462% Critical set accuracy: 96.1900%
 
 keras MLP:
-Test set accuracy: 99.9231% Critical set accuracy: 91.4200%
+Train set accuracy: 99.9808% Test set accuracy: 99.9231% Critical set accuracy: 91.3933%
 
 --------------------------------------------------------
-
-Min, max and averages for all the runs
-
 Created MLP:
-Average test percentage 99.92%. Min test: 99.77%. Max test: 100.00%. Test std: 0.07%
-Average test percentage on critical data 96.03%. Min test: 95.80%. Max test: 96.19%. Test std: 0.11%
-
+Average accuracy train data: 100.00%. Min test: 99.98%. Max test: 100.00%. Test std: 0.01%
+Average accuracy test data: 99.91%. Min test: 99.62%. Max test: 100.00%. Test std: 0.12%
+Average accuracy on critical data 96.00%. Min test: 95.68%. Max test: 96.25%. Test std: 0.17%
 keras MLP:
-Average test percentage 99.91%. Min test: 99.85%. Max test: 100.00%. Test std: 0.05%
-Average test percentage on critical data 91.29%. Min test: 90.69%. Max test: 91.93%. Test std: 0.39%
+Average accuracy train data: 99.98%. Min test: 99.96%. Max test: 100.00%. Test std: 0.01%
+Average accuracy test data: 99.82%. Min test: 99.15%. Max test: 100.00%. Test std: 0.23%
+Average accuracy on critical data 90.79%. Min test: 82.07%. Max test: 92.32%. Test std: 2.93%
